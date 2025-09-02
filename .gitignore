@@ -1,0 +1,19 @@
+#For python
+__pycache__/
+.pyd
+.pyc
+.pyo
+
+#For VENV
+venv/
+
+#For model
+*.pt
+*.weights
+*.onnx
+
+#For Data Folders
+#format "folder_name/"
+
+#For OS and editor
+.vscode/
