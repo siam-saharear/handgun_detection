@@ -11,6 +11,7 @@ venv/
 *.pt
 *.weights
 *.onnx
+runs/
 
 #For Data Folders
 #format "folder_name/"
