@@ -14,7 +14,8 @@ venv/
 runs/
 
 #For Data Folders
-#format "folder_name/"
+test_images/
+
 
 #For OS and editor
 .vscode/
