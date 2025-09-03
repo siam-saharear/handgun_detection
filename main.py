@@ -27,10 +27,28 @@ def load_model():
     model_path = os.path.join(current_path, "model", "best.pt")
     if os.path.exists(model_path):
         model = YOLO(model=model_path)
-        return "okk"
+        return model
     else:
         print("model not found")
         
         
-        
+def detect(model, image):
+    image = cv2.imread(image)
+    results = model(image)
     
+    # for r in results:
+    #     boxes = r.boxes
+    #     for box in boxes:
+    #         x1, y1, x2, y2 = box.xyxy[0].tolist()
+    #         conf = box.conf[0].item()
+    #         cls = int(box.cls[0].item())
+    #         label = model.names[cls]
+    annotated = results[0].plot()
+    cv2.imshow("detection", annotated)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+    
+all_files = read_files()
+model = load_model()
+for image in all_files:
+    detect(model=model, image=image)
