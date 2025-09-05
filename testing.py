@@ -3,6 +3,9 @@ import os
 
 from ultralytics import YOLO
 
+from training import most_recent_model
+
+
 def read_files():
     current_path = os.getcwd()
     path = os.path.join(current_path, "test_images")
@@ -24,7 +27,7 @@ def read_files():
     
 def load_model():
     current_path = os.getcwd()
-    model_path = os.path.join(current_path, "model", "best.pt")
+    model_path = most_recent_model()
     if os.path.exists(model_path):
         model = YOLO(model=model_path)
         return model
