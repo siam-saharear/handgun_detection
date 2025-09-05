@@ -11,8 +11,12 @@ venv/
 *.pt
 *.weights
 *.onnx
-model/
+
+model/*
+!model/.gitkeep
+
 training_images/
+!training_images/.gitkeep
 
 
 #For Data Folders
