@@ -11,7 +11,9 @@ venv/
 *.pt
 *.weights
 *.onnx
-runs/
+model/
+training_images/
+
 
 #For Data Folders
 test_images/
