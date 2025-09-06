@@ -6,7 +6,7 @@ from ultralytics import YOLO
 from training import most_recent_model
 
 
-def read_files():
+def read_test_files():
     current_path = os.getcwd()
     path = os.path.join(current_path, "test_images")
     
@@ -22,7 +22,6 @@ def read_files():
         print("path not valid")
     
     return all_images
-    
     
     
 def load_model():
@@ -43,9 +42,4 @@ def detect(model, image):
     cv2.waitKey(0)
     cv2.destroyAllWindows()
     
-    
-all_files = read_files()
-model = load_model()
-for image in all_files:
-    detect(model=model, image=image)
     

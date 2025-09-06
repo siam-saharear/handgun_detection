@@ -1,30 +1,14 @@
 from ultralytics import YOLO
 import os
 import cv2
-
-
-def read_files():
-    current_path = os.getcwd()
-    folder_path = os.path.join(current_path, "training_images")
-    if os.path.exists(folder_path):
-        all_images = []
-        for file in os.listdir(folder_path):
-            if file.split('.')[-1] == "png" or file.split('.')[-1]== "jpg":
-                file_path = os.path.join(folder_path, file)
-                all_images.append(file_path)
-            else:
-                print("file not image")
-        return all_images
-    else:
-        print("path not valid")
-        
+  
+      
 def most_recent_model():
     current_path = os.getcwd()
     model_folder_path = os.path.join(current_path, "model")
     max_run = 0
     if len(os.listdir(model_folder_path)) != 0:
         for run in os.listdir(model_folder_path):
-            print(run)
             if run[:3] == "run":
                 run_no = int(run[-1])
             else:
@@ -38,7 +22,6 @@ def most_recent_model():
 
         max_train = 1
         for train in os.listdir(max_run_train_path):
-            print(train)
             if train[-1]!= "n" and train[:5]=="train":
                 train_no = int(train[-1])
             else:
@@ -93,6 +76,5 @@ def train_model():
                 imgsz=640, 
                 )
     print("Check for new model")
-    
-train_model()
+
 print(most_recent_model())
