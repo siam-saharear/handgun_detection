@@ -21,9 +21,11 @@ test_images/*
 model/*
 !model/.gitkeep
 
-training_images/
-!training_images/.gitkeep
+training_images/train/*
+!training_images/train/.gitkeep
 
+training_images/val/*
+!training_images/val/.gitkeep
 
 #For OS and editor
 .vscode/
