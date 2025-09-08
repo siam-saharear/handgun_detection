@@ -24,8 +24,9 @@ This project is built on the **Ultralytics YOLOv8n** model.
 3. Place corresponding labels in:  
    - `train/labels/`  
    - `val/labels/`  
-4. Run `manage.py`.  
-5. From the menu, select **Train Model**.  
+4. Keep everything unchanged in data.yaml 
+5. Run `manage.py`.  
+6. From the menu, select **Train Model**.  
 
 ---
 
